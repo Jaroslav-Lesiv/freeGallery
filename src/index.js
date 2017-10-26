@@ -11,6 +11,7 @@ import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-ro
 import createHistory from 'history/createBrowserHistory'
 import { Route } from 'react-router'
 import Header from './components/header/index'
+import OurTeam from './components/ourteam/index'
 import Footer from './components/footer/index'
 import Category from './components/category/index'
 import { Wrapper, Row, ImgWrapper, ImgInform, Picture, ImgName, ImgNavigations, AddToFavorite } from './ui/core/index.jsx'
@@ -51,6 +52,7 @@ ReactDOM.render(<Provider store={store}>
                         <Route exact path="/" component={App}/>
                         <Route path="/about" component={Aboute}/>
                         <Route path="/anoth" component={Anoth}/>
+                        <Route path="/ourteam" component={OurTeam}/>
                       <Footer />
                     </Wrapper>
                   </ConnectedRouter>

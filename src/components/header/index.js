@@ -5,7 +5,7 @@ import AuthBlock from './authBlock'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { user } from '../../actions/user'
-
+import { Link } from 'react-router-dom'
 const mapStateToProps = ({ user }) => ({
 	userSettings: user.userSettings,
 	isShow: user.isShow,
@@ -22,10 +22,10 @@ class Header extends Component {
         return (
             <HeaderWrapper>
                 <NavMenu>
-                    <NavLink isActive>Home</NavLink>
-                    <NavLink>Home</NavLink>
-                    <NavLink>aboute</NavLink>
-                    <NavLink>ckmcz</NavLink>
+                    <NavLink><Link to="/" >Home</Link></NavLink>
+                    <NavLink><Link to="/about">About</Link></NavLink>
+                    <NavLink><Link to="/anoth">Another</Link></NavLink>
+                    <NavLink><Link to="/ourteam">Our team</Link></NavLink>
                 </NavMenu>
 								<MiniFavorite />
 								{!isLogin ? <AuthBlock /> :  <div>User</div>}
