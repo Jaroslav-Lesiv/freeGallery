@@ -1,10 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-
-import Header from './components/header/index'
-import Footer from './components/footer/index'
-import Category from './components/category/index'
-import { Wrapper, Row, ImgWrapper, ImgInform, Picture, ImgName, ImgNavigations, AddToFavorite } from './ui/core/index.jsx'
+import { Route } from 'react-router'
+import { Row, ImgWrapper, ImgInform, Picture, ImgName, ImgNavigations, AddToFavorite } from './ui/core/index.jsx'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { user } from './actions/user'
@@ -17,6 +14,14 @@ const mapDispachToProps = dispatch => bindActionCreators({
 	addToFavorite: user.addToFavorite,
 }, dispatch)
 
+class Aboute extends Component {
+  render() {
+      return (
+        <div>aboute</div>
+      )
+  }
+}
+
 class App extends Component {
   addToFavorite = (data) => {
     this.props.addToFavorite(data)
@@ -28,9 +33,6 @@ class App extends Component {
     {name: 'images4', src: '', id: 3},
     {name: 'images1', id: 4},];
     return (
-      <Wrapper>
-          <Header />
-          <Category />
           <Row>
           {image.map(key => (
             <ImgWrapper key={key.id}>
@@ -44,9 +46,6 @@ class App extends Component {
             </ImgWrapper>
           ))}
           </Row>
-          {/*<Grid />*/}
-          <Footer />
-      </Wrapper>
     );
   }
 }

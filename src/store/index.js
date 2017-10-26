@@ -1,34 +1,20 @@
 import { applyMiddleware, /*  , compose, Middleware, */ createStore } from 'redux'
 import logger from 'redux-logger'
-// Saga
-// import createSagaMiddleware from 'redux-saga'
-// import rootSaga from '../sagas'
-
-
+import createSagaMiddleware from 'redux-saga'
 import reducers from '../reducers'
 import initialState from './initialState'
+import rootSaga from '../sagas'
+import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
+import createHistory from 'history/createBrowserHistory'
 
-// const sagaMiddleware = createSagaMiddleware()
+const history = createHistory()
+const middleware = routerMiddleware(history)
+const sagaMiddleware = createSagaMiddleware()
 
-// function getMiddleware(): Middleware[] {
-// 	let middleware = [sagaMiddleware]
-// 	if (__RAVEN__) {
-// 		const { RavenMiddleware } = require('../middlewares')
-// 		middleware = [RavenMiddleware, ...middleware]
-// 	}
-//
-// 	return middleware
-// }
-
-const ping = store => next => action => {
-	console.log(`Тип события: ${action.type}, дополнительные данные события: ${action.payload}`)
-	return next(action)
-  }
-// const logger = createLogger()
-const	store = createStore(
+const store = createStore(
 	reducers,
 	initialState,
-	applyMiddleware(logger)
+	applyMiddleware(logger, sagaMiddleware, middleware)
 )
 
 if (module.hot) {
@@ -38,6 +24,6 @@ if (module.hot) {
 	})
 }
 
-// sagaMiddleware.run(rootSaga)
+sagaMiddleware.run(rootSaga)
 
 export default store
