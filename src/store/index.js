@@ -1,5 +1,5 @@
-import { /* applyMiddleware , compose, Middleware, */ createStore } from 'redux'
-
+import { applyMiddleware, /*  , compose, Middleware, */ createStore } from 'redux'
+import logger from 'redux-logger'
 // Saga
 // import createSagaMiddleware from 'redux-saga'
 // import rootSaga from '../sagas'
@@ -20,9 +20,15 @@ import initialState from './initialState'
 // 	return middleware
 // }
 
+const ping = store => next => action => {
+	console.log(`Тип события: ${action.type}, дополнительные данные события: ${action.payload}`)
+	return next(action)
+  }
+// const logger = createLogger()
 const	store = createStore(
 	reducers,
 	initialState,
+	applyMiddleware(logger)
 )
 
 if (module.hot) {

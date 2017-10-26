@@ -5,7 +5,7 @@ export default class Category extends Component {
     render() {
         return (
             <CategoryWrapper>
-                <Search placeholder={'Search'} /*style={{ marginLeft: 'auto' }} */ />
+                <Search placeholder={'Search'} style={{ marginLeft: 'auto' }} />
                 <FilterIcon />
             </CategoryWrapper>
         )

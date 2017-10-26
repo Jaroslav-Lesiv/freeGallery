@@ -38,7 +38,7 @@ class App extends Component {
               <ImgInform>
                 <ImgName>{key.name}</ImgName>
                 <ImgNavigations>
-                  <AddToFavorite onClick={() => this.addToFavorite(key)} />
+                  <AddToFavorite onClick={() => this.addToFavorite(key)} style={{ marginLeft: 'auto' }} />
                 </ImgNavigations>
               </ImgInform>
             </ImgWrapper>
