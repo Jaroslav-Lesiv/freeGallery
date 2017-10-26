@@ -4,7 +4,14 @@ import { user } from '../../actions/user'
 import { Link } from 'react-router-dom'
 import { bindActionCreators } from 'redux'
 
-import { OurTeamWrapper, DevCategoryName, DevInformBlock, DevInformImg, DevInformDescript } from '../../ui/components/ourteam'
+import {
+    OurTeamWrapper,
+    DevCategoryName,
+    DevInformBlock,
+    DevInformImg,
+    DevInformDescript,
+    DevName
+} from '../../ui/components/ourteam'
 
 const mapStateToProps = ({  }) => ({
 })
@@ -21,20 +28,20 @@ class OurTeam extends Component {
                 <DevInformBlock>
                     <DevInformImg src='les.jpg' />
                     <DevInformDescript>
-                        Jaroslav Lesiv
+                        <DevName href={'mailto:jaroslav_lesiv@outlook.com'}>Jaroslav Lesiv</DevName>
                     </DevInformDescript>
                 </DevInformBlock>
                 <DevCategoryName>Backend Developer</DevCategoryName>
                 <DevInformBlock>
                     <DevInformImg src="sod.jpg" />
                     <DevInformDescript>
-                        Sodotov Sergei
+                        <DevName>Sodotov Sergei</DevName>
                     </DevInformDescript>
                 </DevInformBlock>
                 <DevInformBlock>
                     <DevInformImg src="and.jpg"/>
                     <DevInformDescript>
-                        Andrei Lyashchevski
+                    <DevName>Andrei Lyashchevski</DevName>
                     </DevInformDescript>
                 </DevInformBlock>
             </OurTeamWrapper>

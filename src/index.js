@@ -50,8 +50,8 @@ ReactDOM.render(<Provider store={store}>
                       <Header />
                       <Category />
                         <Route exact path="/" component={App}/>
-                        <Route path="/about" component={Aboute}/>
-                        <Route path="/anoth" component={Anoth}/>
+                        <Route path="/gallery" component={Anoth}/>
+                        <Route path="/about" component={Aboute}/>                        
                         <Route path="/ourteam" component={OurTeam}/>
                       <Footer />
                     </Wrapper>

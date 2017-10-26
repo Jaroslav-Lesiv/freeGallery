@@ -12,8 +12,8 @@ export const DevCategoryName = styled.div`
     width: 100%;
     min-height: 70px;
     text-align: center;
-    margin: 50px auto;
-    font-size: 55px;
+    margin: 40px auto;
+    font-size: 35px;
     font-weight: 700;
 `
 
@@ -43,4 +43,19 @@ export const DevInformDescript = styled.div`
     flex-grow: 1;
     padding: 15px;
     flex-direction: column;
+`
+
+export const DevName = styled.a.attrs({
+    href: props => props.href || 'none',
+    title: props => props.title || props.href
+})`
+    text-decoration: none;
+    color: black;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    transition-duration: 0.3s;
+    width: 150px;
+    &:hover {
+        transform: scale(1.2);
+    }
 `

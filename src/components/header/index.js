@@ -23,7 +23,7 @@ class Header extends Component {
             <HeaderWrapper>
                 <NavMenu>
                     <NavLink><Link to="/" >Home</Link></NavLink>
-                    <NavLink><Link to="/about">About</Link></NavLink>
+                    <NavLink><Link to="/gallery">Gallery</Link></NavLink>
                     <NavLink><Link to="/anoth">Another</Link></NavLink>
                     <NavLink><Link to="/ourteam">Our team</Link></NavLink>
                 </NavMenu>

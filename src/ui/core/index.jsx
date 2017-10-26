@@ -28,9 +28,7 @@ export const Picture = styled.div`
   cursor: pointer;
   background-size: cover;
   background-image: url(${props => props.image ? props.image : './images/default/default.png'});
-  &:hover {
-     filter: blur(2px);
-  }
+  
 `
 
 export const ImgInform = styled.div`
