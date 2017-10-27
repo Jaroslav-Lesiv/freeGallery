@@ -62,3 +62,10 @@ export const AddToFavorite = styled.div`
   background-size: cover;
   cursor: pointer;
 `
+export const Title = styled.div`
+  width: 100%;
+  min-height: 60px;
+  text-align: ${props => props.textAlign || 'center'};
+  font-size: ${props => props.fontSize || '55px'};
+  font-weight: ${props => props.fontWeight || '700'};
+`

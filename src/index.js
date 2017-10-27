@@ -4,16 +4,16 @@ import ReactDOM from 'react-dom';
 // import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import './index.css';
-import App from './App';
 import registerServiceWorker from './registerServiceWorker';
 import configStore from './store/index'
 import { ConnectedRouter, routerReducer, routerMiddleware, push } from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
 import { Route } from 'react-router'
-import Header from './components/header/index'
-import OurTeam from './components/ourteam/index'
-import Footer from './components/footer/index'
-import Category from './components/category/index'
+import Header from './components/header'
+import OurTeam from './components/ourteam'
+import Footer from './components/footer'
+import Category from './components/category'
+import Gallery from './components/gallery'
 import { Wrapper, Row, ImgWrapper, ImgInform, Picture, ImgName, ImgNavigations, AddToFavorite } from './ui/core/index.jsx'
 
 const history = createHistory()
@@ -23,7 +23,7 @@ const store = configStore
 class Home extends Component {
       render() {
           return (
-            <div>Home</div>
+            <div>Home page</div>
           )
       }
   }
@@ -37,20 +37,13 @@ class Aboute extends Component {
   }
 }
 
-class Anoth extends Component {
-  render() {
-      return (
-        <div>another</div>
-      )
-  }
-}
 ReactDOM.render(<Provider store={store}>
                   <ConnectedRouter history={history}>
                       <Wrapper>
                       <Header />
                       <Category />
-                        <Route exact path="/" component={App}/>
-                        <Route path="/gallery" component={Anoth}/>
+                        <Route exact path="/" component={Home}/>
+                        <Route path="/gallery" component={Gallery}/>
                         <Route path="/about" component={Aboute}/>                        
                         <Route path="/ourteam" component={OurTeam}/>
                       <Footer />

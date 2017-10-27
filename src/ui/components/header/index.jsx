@@ -38,6 +38,14 @@ export const NavLink = styled.a`
         color: #ffffff;
         cursor: pointer;
     }
+    & > a {
+      color: ${props => props.isActive ? '#ffffff' : '#2ecc71'};
+      text-decoration: none;
+      &:hover {
+        color: #ffffff;
+        cursor: pointer;
+      }
+    }
 `
 
 export const CartIcon = styled.div`

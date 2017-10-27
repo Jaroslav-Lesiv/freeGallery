@@ -25,5 +25,13 @@ export default {
 			remember: false,
 			agree: false
 		}
+	},
+	gallery: {
+		result: [{name: 'images1', src: './images/standart-img.jpg', id: 0},
+					{name: 'images2', src: './images/1x1.png', id: 1},
+					{name: 'images3', src: './images/standart-img.jpg', id: 2},
+					{name: 'images4', id: 3},
+					{ id: 4}
+				,],
 	}
 }
