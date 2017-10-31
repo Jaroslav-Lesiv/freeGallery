@@ -15,7 +15,7 @@ export const NavMenu = styled.nav`
     min-height: 75px;
 `
 
-export const NavLink = styled.a`
+export const NavLinkStyle = styled.a`
     flex-grow: 1;
     display: flex;
     text-align: center;

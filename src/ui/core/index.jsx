@@ -64,8 +64,29 @@ export const AddToFavorite = styled.div`
 `
 export const Title = styled.div`
   width: 100%;
-  min-height: 60px;
+  min-height: 45px;
   text-align: ${props => props.textAlign || 'center'};
-  font-size: ${props => props.fontSize || '55px'};
+  font-size: ${props => props.fontSize || '35px'};
   font-weight: ${props => props.fontWeight || '700'};
+`
+
+export const Container = styled.div`
+  display: flex;
+  min-height: 100vh;
+  min-width: 100vw;
+  flex-wrap: wrap;
+  flex-direction: column;
+`
+
+export const BigSearch = styled.input.attrs({
+  type: 'text',
+  placeholder: props => props.placeholder || 'Write you text'
+})`
+  width: 70%;
+  min-height: 40px;
+  border-radius: 13px;
+  border: 2px solid grey;
+  padding-left: 15px;
+  margin: 0 auto;
+  font-size: large;
 `

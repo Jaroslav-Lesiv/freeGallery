@@ -3,14 +3,14 @@ import React from 'react'
 
 
 const slideInModalLeft = keyframes`
-	from { opacity: 0; visibility: visible; right: -1000px }
-	to { opacity: 0.9; visibility: visible ; right: 0 }
+	from { opacity: 0; visibility: visible; transform: translateX(1000px) }
+	to { opacity: 0.9; visibility: visible ; transform: translateX(0px) }
 `
 
 const slideOutModalLeft = keyframes`
-	from { opacity: 0.91 ; visibility: visible; right: 0}
-	99% { opacity: 0.1; visibility: visible; right: -1000px}
-	to { opacity: 0; display: none; visibility: hidden; right: -1000px }
+	from { opacity: 0.91 ; visibility: visible; transform: translateX(0px)}
+	99% { opacity: 0.1; visibility: visible; transform: translateX(1000px)}
+	to { opacity: 0; display: none; visibility: hidden; transform: translateX(1000px) }
 `
 
 const defInModabackdroplLeft = keyframes`
