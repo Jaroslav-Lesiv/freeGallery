@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {
   LogButton,
   LogWrapper
-} from '../../ui/components/header/index.jsx'
+} from '../../../ui/components/header/index.jsx'
 
 import {
   ModalBackDrop,
@@ -12,14 +12,14 @@ import {
   ModalButton,
   ModalNavigationWrap,
   ModalTitle
-} from '../../ui/components/modal/index.jsx'
+} from '../../../ui/components/modal/index.jsx'
 import _ from 'lodash'
 
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
 
-import { user } from '../../actions/user'
+import { user } from '../../../actions/user'
 
 const mapStateToProps = ({ user }) => ({
 
@@ -48,7 +48,7 @@ class Modal extends Component {
     this.setState({ isShow: true})
   }
 
-  defModalText = ' _ '
+  defModalText = ''
 
   defConfirmText = 'Ok'
 

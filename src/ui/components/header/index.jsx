@@ -158,3 +158,73 @@ export const LogButton = styled.button`
 
   }
 `
+
+export const ShortProfile = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-aroud;
+  min-width: 100px;
+  height: 75px;
+`
+export const Profile = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 100px;
+`
+export const ShortProfilePhoto = styled.div`
+  display: flex;
+  background: url(./images/uploads/user/${props => props.images || 'default.png'});
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+  cursor: pointer;
+`
+
+export const ProfilePhoto = styled.div`
+display: flex;
+background: url(./images/uploads/user/${props => props.images || 'default.png'});
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+border-radius: 50%;
+width: 150px;
+height: 150px;
+margin-right: 15px;
+cursor: pointer;
+`
+export const ShortProfileName = styled.div`
+  font-size: 18px;
+  cursor: pointer;
+`
+export const ProfileName = styled.div`
+  font-size: 24px;
+  cursor: pointer;
+`
+export const UserSettingsWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 10px 15px;
+  margin: 0 auto;
+`
+
+export const UserSettingsItems = styled.div`
+  display: flex;
+  width: calc(33.333334% - 30px);
+  min-height: 110px;
+  margin: 15px;
+  background-image: url(./images/settings/${props => props.images});
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+
+`

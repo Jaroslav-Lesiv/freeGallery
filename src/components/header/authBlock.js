@@ -4,7 +4,7 @@ import {
   LogWrapper
 } from '../../ui/components/header/index.jsx'
 import _ from 'lodash'
-import Modal from '../modal/index.js'
+import Modal from '../modules/modal/index.js'
 import LogIn from './logIn.js'
 import SignUp from './signUp.js'
 import { connect } from 'react-redux'

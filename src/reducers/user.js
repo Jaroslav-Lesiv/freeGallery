@@ -3,6 +3,10 @@ import { user } from '../actions'
 import initialState from '../store/initialState'
 
 export default handleActions({
+	[user.showUserSettings]: (store, { payload }) =>
+		({ ...store, isShowUserSettings: true }),
+	[user.hideUserSettings]: (store, { payload }) =>
+		({ ...store, isShowUserSettings: false }),
 	[user.setSettings]: (store, { payload }) =>
 		({ ...store, userSettings: payload }),
 	[user.addToFavorite]: (store, { payload }) =>

@@ -64,7 +64,6 @@ export const ModalBody = styled.div`
     ${props => props.isShow === true ? slideInModalLeft :
     props.isShow === false ? slideOutModalLeft :
     'none'};
-
   display:
     ${props => props.isShow === true ? 'flex' :
     props.isShow === false ? 'flex' : 'none'};

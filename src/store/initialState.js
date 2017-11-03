@@ -1,10 +1,16 @@
 export default {
 	user: {
-		isLogin: false,
-    userSettings: {},
+		isLogin: true,
+		userSettings: [],
+		profile: {
+			username: 'Jaroslav Lesiv',
+			avatar: 'avatar1.jpg'
+		},
 		Favorite: [],
 		isShow: false,
 		isShowMiniFavorite: false,
+		isShowProfile: true,
+		isShowUserSettings: false
   },
 	auth: {
 		modal: {
