@@ -9,17 +9,10 @@ export const { auth } = createActions({
       HIDE_MODAL: payload => payload,
     },
     LOGIN: {
-      NAME: payload => payload,
-      PASS: payload => payload
+      REQUEST,
     },
     SIGN_UP: {
-      FIRST_NAME: payload => payload,
-      LAST_NAME: payload => payload,
-      EMAIL: payload => payload,
-      PASSWORD: payload => payload,
-      PASSWORD_CONFIRM: payload => payload,
-      REMEMBER_ME: payload => payload,
-      AGREE: payload => payload,
+      REQUEST,
     }
   }
 })

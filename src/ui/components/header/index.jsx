@@ -221,10 +221,24 @@ export const UserSettingsItems = styled.div`
   width: calc(33.333334% - 30px);
   min-height: 110px;
   margin: 15px;
+  flex-direction: column;
+  align-items: center;
+`
+
+
+export const UserSettingsItemsImage = styled.div`
   background-image: url(./images/settings/${props => props.images});
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+`
 
 
+export const UserSettingsItemsName = styled.div`
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 18px;
 `

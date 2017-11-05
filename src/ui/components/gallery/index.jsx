@@ -13,7 +13,7 @@ export const ImagesRow = styled.div`
 `
 export const Images  = styled.img.attrs({  
     title: (props => props.title || _.uniqueId('images_')),
-    src: props => props.images || './images/default/default.png'
+    src: props => props.images || 'images/default/default.png'
 })`
     height: 230px;
     margin: 5px 10px;

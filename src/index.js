@@ -44,10 +44,10 @@ ReactDOM.render(<Provider store={store}>
                       <Wrapper>
                       <Header />
                       <Category />
-                        <Route exact path="/" component={Home}/>
-                        <Route path="/gallery" component={Gallery}/>
-                        <Route path="/about" component={Aboute}/>
-                        <Route path="/ourteam" component={OurTeam}/>
+                        <Route exact path="freeGallery/" component={Home}/>
+                        <Route path="freeGallery/gallery" component={Gallery}/>
+                        <Route path="freeGallery/about" component={Aboute}/>
+                        <Route path="freeGallery/ourteam" component={OurTeam}/>
                       <Footer />
                     </Wrapper>
                   </ConnectedRouter>

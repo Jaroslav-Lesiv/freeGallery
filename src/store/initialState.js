@@ -10,7 +10,8 @@ export default {
 		isShow: false,
 		isShowMiniFavorite: false,
 		isShowProfile: true,
-		isShowUserSettings: false
+		isShowUserSettings: false,
+		isShowUserModal: false
   },
 	auth: {
 		modal: {

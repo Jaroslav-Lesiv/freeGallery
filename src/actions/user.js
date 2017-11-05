@@ -11,7 +11,8 @@ export const { user } = createActions({
     ADD_TO_FAVORITE: payload => payload,
     HIDE_FAVORITE_LIST: payload => payload,
     SHOW_FAVORITE_LIST: payload => payload,
-    SHOW_USER_SETTINGS: payload => payload,
-    HIDE_USER_SETTINGS: payload => payload,
+    SHOW_USER_MODAL: payload => payload,
+    HIDE_USER_MODAL: payload => payload,
+    SHOW_USER_SETTINGS: payload => payload
   }
 })

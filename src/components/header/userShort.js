@@ -3,6 +3,7 @@ import _ from 'lodash'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { user } from '../../actions'
+import UserSettingsBlock from '../modules/modal/userSettingsItems'
 import {
     ShortProfile,
     ShortProfilePhoto,
@@ -17,28 +18,34 @@ import Modal from '../modules/modal'
 
 const mapStateToProps = ({ user }) => ({
     profile: user.profile,
+    isShowUserModal: user.isShowUserModal,
     isShowUserSettings: user.isShowUserSettings
 })
 
 const mapDispachToProps = dispatch => bindActionCreators({
-    showUserSettings: user.showUserSettings,
-    hideUserSettings: user.hideUserSettings
+    showUserModal: user.showUserModal,
+    hideUserModal: user.hideUserModal,
+    showUserSettings: user.showUserSettings
 }, dispatch)
 
 class UserShort extends Component {
 
+    showUserModal = () => {
+        this.props.showUserModal()
+    }
+
+    hideUserModal = () => {
+        this.props.hideUserModal()
+    }
+
     showUserSettings = () => {
         this.props.showUserSettings()
     }
-
-    hideUserSettings = () => {
-        this.props.hideUserSettings()
-    }
     render() {
-        const { profile, isShowUserSettings } = this.props
+        const { profile, isShowUserModal } = this.props
         return (
             <div>
-                <ShortProfile onClick={this.showUserSettings}>
+                <ShortProfile onClick={this.showUserModal}>
                     <ShortProfilePhoto images={profile.avatar} />
                     <ShortProfileName>{profile.username || 'user'}</ShortProfileName>
                 </ShortProfile>
@@ -49,17 +56,18 @@ class UserShort extends Component {
                             <ProfileName>{profile.username}</ProfileName>
                         </Profile>
                     }
-                    isShow={isShowUserSettings}
-                    hideModalFunc={this.hideUserSettings}
+                    isShow={isShowUserModal}
+                    hideModalFunc={this.hideUserModal}
                     modalBody={
                         <UserSettingsWrapper>
-                            <UserSettingsItems images={'profile.svg'} />
-                            <UserSettingsItems images={'profile.svg'} />
-                            <UserSettingsItems images={'profile.svg'} />
-                            <UserSettingsItems images={'profile.svg'} />
-                            <UserSettingsItems images={'profile.svg'} />
-                            <UserSettingsItems images={'profile.svg'} />
-                            <UserSettingsItems images={'profile.svg'} />
+                            <UserSettingsBlock
+                                images={'profile.svg'}
+                                name={'Profile'}
+                                clickFunc={this.showUserSettings} />
+                            <UserSettingsBlock images={'profile.svg'} name={'My Gallery'} />
+                            <UserSettingsBlock images={'profile.svg'} name={'Favorite'} />
+                            <UserSettingsBlock images={'profile.svg'} name={'Profile'} />
+                            <UserSettingsBlock images={'profile.svg'} name={'Profile'} />
                         </UserSettingsWrapper>
                     }
                         />

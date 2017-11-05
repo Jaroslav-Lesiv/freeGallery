@@ -18,8 +18,18 @@ export function* watchIncrementAsync() {
 	yield takeEvery(action.user.showFavoriteList, helloSaga)
 }
 
+// AUTH
+
+export function* fetchLogin() {
+	yield takeEvery(action.auth.request.pending, helloSaga)
+}
+
+
+
 export default function* rootSaga() {
 	yield all([
-	  watchIncrementAsync()
+		watchIncrementAsync(),
+		// Auth
+		fetchLogin()
 	])
   }
