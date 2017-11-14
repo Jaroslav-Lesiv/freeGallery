@@ -1,9 +1,9 @@
-import React, { Component } from 'react'
-import _ from 'lodash'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { user } from '../../actions'
-import UserSettingsBlock from '../modules/modal/userSettingsItems'
+import React, { Component } from 'react';
+import _ from 'lodash';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { auth, user } from '../../actions';
+import UserSettingsBlock from '../modules/modal/userSettingsItems';
 import {
     ShortProfile,
     ShortProfilePhoto,
@@ -13,8 +13,8 @@ import {
     ProfileName,
     UserSettingsWrapper,
     UserSettingsItems
-} from '../../ui/components/header'
-import Modal from '../modules/modal'
+} from '../../ui/components/header';
+import Modal from '../modules/modal';
 
 const mapStateToProps = ({ user }) => ({
     profile: user.profile,
@@ -25,7 +25,8 @@ const mapStateToProps = ({ user }) => ({
 const mapDispachToProps = dispatch => bindActionCreators({
     showUserModal: user.showUserModal,
     hideUserModal: user.hideUserModal,
-    showUserSettings: user.showUserSettings
+    showUserSettings: user.showUserSettings,
+    logOut: auth.logOut
 }, dispatch)
 
 class UserShort extends Component {
@@ -40,6 +41,10 @@ class UserShort extends Component {
 
     showUserSettings = () => {
         this.props.showUserSettings()
+    }
+
+    logOutFunc  = () => {
+        this.props.logOut()
     }
     render() {
         const { profile, isShowUserModal } = this.props
@@ -58,12 +63,15 @@ class UserShort extends Component {
                     }
                     isShow={isShowUserModal}
                     hideModalFunc={this.hideUserModal}
+                    confirmModalFunc={this.logOutFunc}
+                    acceptButtonText={'Log out'}
                     modalBody={
                         <UserSettingsWrapper>
                             <UserSettingsBlock
                                 images={'profile.svg'}
                                 name={'Profile'}
-                                clickFunc={this.showUserSettings} />
+                                clickFunc={this.showUserSettings}
+                                 />
                             <UserSettingsBlock images={'profile.svg'} name={'My Gallery'} />
                             <UserSettingsBlock images={'profile.svg'} name={'Favorite'} />
                             <UserSettingsBlock images={'profile.svg'} name={'Profile'} />

@@ -1,28 +1,28 @@
-import styled, { keyframes } from 'styled-components'
-import React from 'react'
+import styled, { keyframes } from 'styled-components';
+import React from 'react';
 
 
 const slideInModalLeft = keyframes`
 	from { opacity: 0; visibility: visible; transform: translateX(1000px) }
 	to { opacity: 0.9; visibility: visible ; transform: translateX(0px) }
-`
+`;
 
 const slideOutModalLeft = keyframes`
 	from { opacity: 0.91 ; visibility: visible; transform: translateX(0px)}
 	99% { opacity: 0.1; visibility: visible; transform: translateX(1000px)}
 	to { opacity: 0; display: none; visibility: hidden; transform: translateX(1000px) }
-`
+`;
 
 const defInModabackdroplLeft = keyframes`
 	from { visibility: visible; opacity: 0; }
 	100% { visibility: visible; opacity: 0.9; }
-`
+`;
 
 const defOutModabackdroplLeft = keyframes`
 	from { opacity: 0.9 ; visibility: visible; }
 	99% { opacity: 0; visibility: visible; }
 	100% { opacity: 0; display: none; visibility: hidden }
-`
+`;
 
 export const ModalBackDrop = styled.div`
   display:
@@ -44,7 +44,11 @@ export const ModalBackDrop = styled.div`
   animation-duration: 0.3s;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
-`
+
+  @media (max-width: 767px) {
+		display: none;
+	}
+`;
 
 export const ModalBody = styled.div`
   position: fixed;
@@ -70,7 +74,15 @@ export const ModalBody = styled.div`
   animation-fill-mode: forwards;
   animation-timing-function: ease;
   animation-fill-mode: forwards;
-`
+
+  @media (max-width: 1023px) {
+		width: ${props => props.width || '60%'};
+  }
+  
+  @media (max-width: 767px) {
+		width: ${props => props.width || '100%'};
+	}
+`;
 export const ModalForm = styled.div`
   position: relative;
   width: 100%;
@@ -78,7 +90,7 @@ export const ModalForm = styled.div`
   padding-right: 55px;
   z-index: 102;
   height: 100%;
-`
+`;
 
 export const ModalInput = styled.input.attrs({
     type: props => props.type || 'text'
@@ -96,14 +108,14 @@ export const ModalInput = styled.input.attrs({
   margin-bottom: 5px;
   font-size: 22px;
   padding-left: 10px;
-`
+`;
 export const ModalNavigationWrap = styled.div`
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 70px;
-`
+`;
 export const ModalButton = styled.button`
     position: relative;
     display: flex;
@@ -126,11 +138,11 @@ export const ModalButton = styled.button`
     }
 
 }
-`
+`;
 export const ModalTitle = styled.h1`
   width: 100%;
   margin-left: 55px;
   margin-right: 55px;
   font-size: 36px;
   text-align: center;
-`
+`;

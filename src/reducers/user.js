@@ -1,5 +1,5 @@
 import { handleActions } from 'redux-actions';
-import { user } from '../actions'
+import { user, auth } from '../actions'
 import initialState from '../store/initialState'
 
 export default handleActions({
@@ -19,4 +19,7 @@ export default handleActions({
 		({ ...store, isShowMiniFavorite: true }),
 	[user.showUserSettings]: store =>
 		({ ...store, isShowUserSettings: true, isShowUserModal: false }),
+	
+	[auth.logOut]: store =>
+		({ ...store, isLogin: false }),
 }, initialState.user)

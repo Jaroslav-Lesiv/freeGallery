@@ -4,6 +4,7 @@ export const Wrapper = styled.div`
     width: 100%;
     max-width: 1960px;
     margin: 0 auto;
+    overflow: hidden;
 `
 export const Row = styled.div`
     display: flex;
