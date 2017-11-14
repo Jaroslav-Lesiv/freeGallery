@@ -7,7 +7,7 @@ import {
 } from 'redux-saga/effects';
 
 import * as action from '../actions';
-// import api from '../service/api'
+import api from '../service/api'
 
 export function* helloSaga() {
 	yield delay(3000);
@@ -19,13 +19,10 @@ export function* watchIncrementAsync() {
 }
 
 // AUTH
-function*  fetchLogOut                 () {
-	yield console.log('logout')
-}
 
 
 export function* workerFetchLogin() {
-	yield takeEvery(action.auth.logOut, fetchLogOut);
+	yield takeEvery(action.auth.logOut, api.fetchLogOut);
 }
 
 

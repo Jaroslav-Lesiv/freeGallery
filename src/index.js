@@ -7,15 +7,16 @@ import registerServiceWorker from './registerServiceWorker';
 import configStore from './store/index'
 import { ConnectedRouter } from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
-import { Route } from 'react-router'
+import { Route, Switch, Redirect, RouteProps, Link as RouterLink, NavLink as RouterNavLink, LinkProps  } from 'react-router'
 import Header from './components/header'
 import OurTeam from './components/ourteam'
 import Footer from './components/footer'
 import Category from './components/category'
 import Gallery from './components/gallery'
+import NotFound from './components/404'
 import { Wrapper, Title, Container, BigSearch } from './ui/core/index.jsx'
 
-const history = createHistory()
+export const history = createHistory()
 const store = configStore
 
 
@@ -44,10 +45,13 @@ ReactDOM.render(<Provider store={store}>
                       <Wrapper>
                       <Header />
                       <Category />
-                        <Route exact path="freeGallery/" component={Home}/>
-                        <Route path="freeGallery/gallery" component={Gallery}/>
-                        <Route path="freeGallery/about" component={Aboute}/>
-                        <Route path="freeGallery/ourteam" component={OurTeam}/>
+                      <Switch>
+                        <Route exact path="/" component={Home}/>
+                        <Route path="/gallery" component={Gallery}/>
+                        <Route path="/about" component={Aboute}/>
+                        <Route path="/ourteam" component={OurTeam}/>
+                        <Route path='*' component={NotFound} />
+                      </Switch>
                       <Footer />
                     </Wrapper>
                   </ConnectedRouter>

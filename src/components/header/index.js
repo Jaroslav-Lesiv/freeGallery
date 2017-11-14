@@ -1,13 +1,17 @@
-import React, { Component } from 'react'
-import { HeaderWrapper, NavMenu, NavLinkStyle,  } from '../../ui/components/header/index.jsx'
-import MiniFavorite from './miniFavorite'
-import AuthBlock from './authBlock'
-import UserShort from './userShort'
-import { connect } from 'react-redux'
-import { bindActionCreators } from 'redux'
-import { user } from '../../actions/user'
-import { Link } from 'react-router-dom'
-import NavLinkHeader from '../modules/navlink'
+import React, { Component } from 'react';
+import { HeaderWrapper, NavMenu, NavLinkStyle,  } from '../../ui/components/header/index.jsx';
+import MiniFavorite from './miniFavorite';
+import './index.css';
+import AuthBlock from './authBlock';
+import UserShort from './userShort';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+import { user } from '../../actions/user';
+import { NavLink as RouterNavLink } from 'react-router-dom'
+
+// import { Link } from 'react-router-dom'
+import NavLinkHeader from '../modules/navlink';
+import { NavLink as HeaderLink } from '../../helper/router';
 const mapStateToProps = ({ user }) => ({
 	userSettings: user.userSettings,
     isShow: user.isShow,
@@ -25,10 +29,10 @@ class Header extends Component {
         return (
             <HeaderWrapper>
                 <NavMenu>
-                    <NavLinkStyle><Link exact to="/" >Home</Link></NavLinkStyle>
-                    <NavLinkStyle><Link to="/gallery">Gallery</Link></NavLinkStyle>
-                    <NavLinkStyle><Link to="/anoth">Another</Link></NavLinkStyle>
-                    <NavLinkStyle><Link to="/ourteam">Our team</Link></NavLinkStyle>
+                    <RouterNavLink activeClassName={'active'} to="/"><NavLinkStyle>Home</NavLinkStyle></RouterNavLink>
+                    <RouterNavLink activeClassName={'active'} to="/gallery"><NavLinkStyle>Gallery</NavLinkStyle></RouterNavLink>
+                    <RouterNavLink activeClassName={'active'} to="/anoth"><NavLinkStyle>Another</NavLinkStyle></RouterNavLink>
+                    <RouterNavLink activeClassName={'active'} to="/ourteam"><NavLinkStyle>Our team</NavLinkStyle></RouterNavLink>
                 </NavMenu>
                     <MiniFavorite />
                 { isLogin ? <UserShort /> : <AuthBlock /> }
