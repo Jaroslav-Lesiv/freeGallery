@@ -56,6 +56,15 @@ export const ImgName = styled.div`
   text-transform: uppercase;
 `
 
+export const ButtonToCallSett = styled.div`
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 10px;
+  opacity: 0
+`
+
 export const AddToFavorite = styled.div`
   width: 35px;
   height: 35px;

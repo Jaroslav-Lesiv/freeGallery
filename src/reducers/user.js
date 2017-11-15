@@ -22,4 +22,7 @@ export default handleActions({
 	
 	[auth.logOut]: store =>
 		({ ...store, isLogin: false }),
+
+	[auth.login.request.success]: (store, { payload }) =>
+		({ ...store, isLogin: true, user: payload })
 }, initialState.user)

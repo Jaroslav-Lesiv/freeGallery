@@ -93,11 +93,13 @@ export const ModalForm = styled.div`
 `;
 
 export const ModalInput = styled.input.attrs({
-    type: props => props.type || 'text'
+    type: props => props.type || 'text',
+    placeholder: props => props.placeholder || '',
 })`
   display: flex;
   flex-direction: row;
   width: 100%;
+  max-width: 400px;
   background: none;
   font-weight: 500;
   border: none;
