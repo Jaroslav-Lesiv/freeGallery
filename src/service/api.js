@@ -32,6 +32,29 @@ function* fetchLogOut({ payload }) {
     }
 }
 
+function* fetchSignUp({ payload }) {
+    yield console.log(payload)
+    try {
+        const response = yield call (post, 'register', payload)
+        console.log('response', response)
+    } catch (error) {
+        console.log('error', error)
+        
+    }
+}
+
+function* fetchLogin({ payload }) {
+    yield console.log(payload)
+    try {
+        const response = yield call (post, 'login', payload)
+        console.log('response', response)
+    } catch (error) {
+        console.log('error', error)
+    }
+}
+
 export default {
-	fetchLogOut
+    fetchLogOut,
+    fetchSignUp,
+    fetchLogin
 };

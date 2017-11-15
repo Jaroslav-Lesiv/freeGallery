@@ -25,12 +25,21 @@ export function* workerFetchLogin() {
 	yield takeEvery(action.auth.logOut, api.fetchLogOut);
 }
 
+export function* fetchSignUp() {
+	yield takeLatest(action.auth.signUp.request.pending, api.fetchSignUp)
+}
+
+export function* fetchLogin() {
+	yield takeLatest(action.auth.login.request.pending, api.fetchLogin)
+}
 
 
 export default function* rootSaga() {
 	yield all([
 		watchIncrementAsync(),
 		// Auth
-		workerFetchLogin()
+		workerFetchLogin(),
+		fetchSignUp(),
+		fetchLogin(),
 	])
   }

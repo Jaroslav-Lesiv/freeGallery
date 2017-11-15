@@ -1,6 +1,6 @@
 export default {
 	user: {
-		isLogin: true,
+		isLogin: false,
 		userSettings: [],
 		profile: {
 			username: 'Jaroslav Lesiv',
