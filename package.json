@@ -1,7 +1,7 @@
 {
   "name": "freegallery",
   "version": "0.1.0",
-  "homepage": "http://Jaroslav-Lesiv.github.io/freeGallery",
+  "homepage": "http://Jaroslav-Lesiv.github.io/",
   "private": true,
   "dependencies": {
     "history": "^4.7.2",

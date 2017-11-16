@@ -4,7 +4,13 @@ export const Wrapper = styled.div`
     width: 100%;
     max-width: 1960px;
     margin: 0 auto;
-    overflow: hidden;
+    position: fixed;
+    display: flex;
+    flex-direction: row;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
 `
 export const Row = styled.div`
     display: flex;
@@ -86,6 +92,12 @@ export const Container = styled.div`
   min-width: 100vw;
   flex-wrap: wrap;
   flex-direction: column;
+`
+export const Main = styled.div`
+display: flex;
+flex-direction: column;
+width: 100%;
+flex-grow: 1;
 `
 
 export const BigSearch = styled.input.attrs({

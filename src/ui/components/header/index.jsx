@@ -1,51 +1,49 @@
 import styled from 'styled-components'
 
 export const HeaderWrapper = styled.header`
-    width: 100%;
-    min-height: 75px;
+    max-width: 75px;
     background: ${props => props.background ? props.background : '#ecf0f1'};
     display: flex;
+    flex-direction: column;
     align-items: center;
 `
 
 export const NavMenu = styled.nav`
     display: flex;
-    max-width: 700px;
+    flex-direction: column;
     align-items: center;
-    min-height: 75px;
+    max-width: 75px;
+    padding-top: 75px;
+    overflow: hidden;
 `
 
 export const NavLinkStyle = styled.div`
-    flex-grow: 1;
+    width: 100%;
     display: flex;
-    text-align: center;
-    border-radius: 17px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     box-shadow: none;
-    padding: 5px 15px;
-    margin-left: 7.5px;
-    margin-right: 7.5px;
-    border-style: solid;
-    background: ${props => props.isActive ? '#2ecc71' : '#ffffff'};
-    border-color: ${props => props.isActive ? '#2ecc71' : '#ffffff'};
-    border-width: 2px;
-    color: ${props => props.isActive ? '#ffffff' : '#2ecc71'};
     text-decoration: none;
-    text-transform: uppercase;
+    min-height: 75px;
+    min-width: 45px;
+    margin: 0 auto;
+    background-image: url(./images/header/nav/${props => props.background});
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     transition-duration: 0.4s;
     &:hover {
-        border-color: #ffffff;
-        background: #2ecc71;
-        color: #ffffff;
         cursor: pointer;
     }
-    & > a {
-      color: ${props => props.isActive ? '#ffffff' : '#2ecc71'};
-      text-decoration: none;
-      &:hover {
-        color: #ffffff;
-        cursor: pointer;
-      }
-    }
+`
+
+export const SiteLogo = styled.div`
+    width: ${props => props.width || '75px'};
+    height: ${props => props.height || '75px'};
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid red;
 `
 
 export const CartIcon = styled.div`
@@ -53,12 +51,16 @@ export const CartIcon = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 50px;
-    height: 50px;
+    width: 45px;
+    height: 45px;
+    margin-top: 5px;
+    margin-bottom: 5px;
     font-weight: 700;
     font-size: 24px;
-    background-image: url(/images/header/favorite.svg);
+    background-image: url(/images/header/nav/basic_star.svg);
     background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
     cursor: pointer;
     &:hover {
 
@@ -132,6 +134,7 @@ export const MiniFavoriteName = styled.div`
 export const LogWrapper = styled.div`
   display: flex;
   flex-direction: row;
+  margin-top: 100%;
 `
 export const LogButton = styled.button`
   display: flex;
@@ -161,7 +164,7 @@ export const LogButton = styled.button`
 
 export const ShortProfile = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: space-aroud;
   min-width: 100px;

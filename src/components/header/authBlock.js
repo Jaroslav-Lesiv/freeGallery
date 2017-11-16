@@ -10,6 +10,8 @@ import SignUp from '../auth/signUp.js'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 
+import UserShort from './userShort';
+
 
 import { user, auth } from '../../actions'
 
@@ -42,16 +44,20 @@ class AuthBlock extends Component {
       const { ModalToDo } = this.state
       const { hideAuthModal, showLogInModal, showSignUpModal } = this
         return (
-          !isLogin &&
+         
+          
           <LogWrapper>
-            <LogButton onClick={showLogInModal}>
-              Log In
-            </LogButton>
-            <LogButton onClick={showSignUpModal}>
-              Sign Up
-            </LogButton>
-            <LogIn />
-            <SignUp />
+             {isLogin ? <UserShort /> : (
+            <div>
+              <LogButton onClick={showLogInModal}>
+                Log In
+              </LogButton>
+              <LogButton onClick={showSignUpModal}>
+                Sign Up
+              </LogButton>
+              <LogIn />
+              <SignUp />
+            </div>)}
           </LogWrapper>
         )
     }

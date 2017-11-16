@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-import { HeaderWrapper, NavMenu, NavLinkStyle,  } from '../../ui/components/header/index.jsx';
+import { HeaderWrapper, NavMenu, NavLinkStyle, SiteLogo  } from '../../ui/components/header';
 import { ButtonToCallSett } from '../../ui/core';
 import MiniFavorite from './miniFavorite';
 import './index.css';
 import AuthBlock from './authBlock';
-import UserShort from './userShort';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { user } from '../../actions/user';
@@ -34,16 +33,18 @@ class Header extends Component {
 		const { isLogin } = this.props
         return (
             <HeaderWrapper>
+                <SiteLogo>Logo</SiteLogo>
                 <NavMenu>
-                    <NavLink activeClassName={'active'} exact to="/"><NavLinkStyle>Home</NavLinkStyle></NavLink>
-                    <NavLink activeClassName={'active'} exact to="/gallery"><NavLinkStyle>Gallery</NavLinkStyle></NavLink>
-                    <NavLink activeClassName={'active'} exact to="/anoth"><NavLinkStyle>Another</NavLinkStyle></NavLink>
-                    <NavLink activeClassName={'active'} exact to="/ourteam"><NavLinkStyle>Our team</NavLinkStyle></NavLink>
-                </NavMenu>
+                    <NavLink activeClassName={'active'} strict exact to="/"><NavLinkStyle background={'basic_home.svg'}/></NavLink>
+                    <NavLink activeClassName={'active'} strict exact to="/gallery"><NavLinkStyle background={'basic_webpage_multiple.svg'}/></NavLink>
+                    <NavLink activeClassName={'active'} strict exact to="/anoth"><NavLinkStyle background={'basic_mail.svg'}/></NavLink>
+                    <NavLink activeClassName={'active'}  strict exact to="/ourteam"><NavLinkStyle background={'basic_headset.svg'}/></NavLink>
                     <MiniFavorite />
+                </NavMenu>
+                    
         {isLogin && <ButtonToCallSett onMouseEnter={() => this.showUserModal()} /> }
                     
-                { isLogin ? <UserShort /> : <AuthBlock /> }
+                <AuthBlock />
             </HeaderWrapper>
         )
     }
